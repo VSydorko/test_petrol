@@ -12,6 +12,4 @@ workflows:
           TEST_DEVICE=$(xcrun simctl create test-device com.apple.CoreSimulator.SimDeviceType.iPhone-14 com.apple.CoreSimulator.SimRuntime.iOS-16-2)
           xcrun simctl boot $TEST_DEVICE
           flutter devices
-          mkdir -p test-results
-          patrol -v test > test-results/flutter.json integration_test
-        test_report: test-results/flutter.json
+          patrol test integration_test
