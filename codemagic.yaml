@@ -13,5 +13,5 @@ workflows:
           xcrun simctl boot $TEST_DEVICE
           flutter devices
           mkdir -p test-results
-          patrol test > test-results/flutter.json integration_test
+          patrol -v test > test-results/flutter.json integration_test
         test_report: test-results/flutter.json
